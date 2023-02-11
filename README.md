@@ -1,2 +1,2 @@
 # Consulta de Dados
-*Free*
+*Ao executar pela primeira vez execute o arquivo iniciar
