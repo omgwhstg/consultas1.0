@@ -1,1 +1,0 @@
-print('Por favor, seja você mesmo')
