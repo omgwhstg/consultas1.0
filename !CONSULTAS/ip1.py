@@ -23,9 +23,9 @@ def consult_IP():
     inp_IP = input(f'''{ye}[-] PARA VOLTAR AO MENU.
   ╰──>  DIGITE O IP QUE DESEJA BUSCAR: {r}''')
     if len(inp_IP) == 14:
-        request = requests.get(f'https://ipwhois.app/json/{inp_IP}')
+        request = requests.get(f'http://ip-api.com/json/{inp_IP}')
         IPaddres = request.json()
-        if 'message' in IPaddres:
+        if 'fail' in IPaddres:
             sy('cls')
             print(f'''{r}
 │ ERRO!
@@ -36,20 +36,15 @@ def consult_IP():
         else:
             sy('cls')
             print(f'''{g}
-│{w} IP: {g}{(IPaddres['ip'])}
-│{w} TIPO: {g}{(IPaddres['type'])}
-│{w} CONTINENTE:{g}{(IPaddres['continent'])}/{g}{(IPaddres['continent_code'])}
-│{w} PAÍS: {g}{(IPaddres['country'])}/{g}{(IPaddres['country_code'])}
-│{w} REGIÃO: {g}{(IPaddres['region'])}
+│{w} IP: {g}{inp_IP}
+│{w} PAÍS: {g}{(IPaddres['country'])}/{g}{(IPaddres['countryCode'])}
+│{w} REGIÃO: {g}{(IPaddres['region'])}/{(IPaddres['regionName'])}
+│{w} HORARIO GMT: {g}{(IPaddres['timezone'])}
 │{w} CIDADE: {g}{(IPaddres['city'])}
-│{w} LATITUDE: {g}{(IPaddres['latitude'])}
-│{w} LONGITUDE: {g}{(IPaddres['longitude'])}
-│{w} CODIGO DE ÁREA: {g}{(IPaddres['country_phone'])}
-│{w} PAISES VIZINHOS: {g}{(IPaddres['country_neighbours'])}
-│{w} ASN: {g}{(IPaddres['asn'])}
+│{w} LATITUDE: {g}{(IPaddres['lat'])}
+│{w} LONGITUDE: {g}{(IPaddres['lon'])}
 │{w} EMPRESA: {g}{(IPaddres['org'])}
-│{w} HORARIO GMT: {g}{(IPaddres['timezone_gmt'])}
-│{w} MOEDA: {g}{(IPaddres['currency'])}/{(IPaddres['currency_code'])}/{(IPaddres['currency_symbol'])}''')
+│{w} LINK MAPS: {g}https://www.google.com.br/maps/place/{(IPaddres['lat'])}%20{(IPaddres['lon'])}''')
         input(f'''{g}│
 ╰──>   APERTE ENTER PARA CONTINUAR.{w}''')
     elif inp_IP == '-':
