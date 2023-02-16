@@ -20,7 +20,7 @@ colors = [lg, r, cy, ye,b,p]
 
 def consult_IP():
     banner_ip()
-    inp_IP = input(f'''{ye}[-] PARA VOLTAR AO MENU.
+    inp_IP = input(f'''{ye}[*] PARA VOLTAR AO MENU.
   ╰──>  DIGITE O IP QUE DESEJA BUSCAR: {r}''')
     if len(inp_IP) == 14:
         request = requests.get(f'http://ip-api.com/json/{inp_IP}')
@@ -47,7 +47,7 @@ def consult_IP():
 │{w} LINK MAPS: {g}https://www.google.com.br/maps/place/{(IPaddres['lat'])}%20{(IPaddres['lon'])}''')
         input(f'''{g}│
 ╰──>   APERTE ENTER PARA CONTINUAR.{w}''')
-    elif inp_IP == '-':
+    elif inp_IP == '*':
         pass
     else:
         print(f'''{ye}

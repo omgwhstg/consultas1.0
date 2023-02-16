@@ -65,3 +65,14 @@ def banner_placa():
     f = pyfiglet.Figlet(font='slant')
     banner = f.renderText('PLACA')
     print(f'{random.choice(colors)}{banner}{n}')
+
+def banner_whois():
+    f = pyfiglet.Figlet(font='slant')
+    banner = f.renderText('WHOIS?')
+    print(f'{random.choice(colors)}{banner}{n}')
+
+def banner_IpSite():
+    f = pyfiglet.Figlet(font='slant')
+    banner = f.renderText('WHOIS?')
+    print(f'{random.choice(colors)}{banner}{n}')
+
